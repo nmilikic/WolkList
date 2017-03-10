@@ -1,7 +1,5 @@
-// PAGE CONTROLLER *******************
-
+// PAGE CONTROLLER
 // Config WolkList
-======================================
 
     vm.configWolkList = {
         search: false, // Search visibility
@@ -16,9 +14,7 @@
         }
     };
 
-
 // List data structure
-=======================================
 
 vm.listData = [
     {
@@ -34,6 +30,5 @@ vm.listData = [
 // ...
 ];
 
-// HTML PAGE **************************
-
+// HTML PAGE
 <wolk-list config-list="main.configWolkList" list-items="main.listData"></wolk-list>
