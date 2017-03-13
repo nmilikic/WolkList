@@ -13,5 +13,9 @@
   },
   "authors": [
     "Nenad Milikic"
+  ],
+  "ignore": [
+    "bower.json",
+    ".bower.json"
   ]
 }
