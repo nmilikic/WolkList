@@ -17,5 +17,8 @@
   "ignore": [
     "bower.json",
     ".bower.json"
-  ]
+  ],
+  "dependencies": {
+    "angular": "~1.5.3"
+  }
 }
