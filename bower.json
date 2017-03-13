@@ -1,4 +1,17 @@
 {
     "name": "wolk-list",
-    "version": "1.0"
+    "version": "1.0",
+    "description": "Angular Material List component, with checkboxes, list title and search input",
+  "main": [
+    "wolkList.directive.js",
+    "wolkList.html",
+    "wolkList.less"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nmilikic/WolkList.git"
+  },
+  "authors": [
+    "Nenad Milikic"
+  ]
 }
