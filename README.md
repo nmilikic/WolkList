@@ -1,54 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wolk-List - Angular component</title>
-</head>
-<body>
+## WolkList Angular Component
 
-    <h3>// PAGE CONTROLLER</h3>
-    <h4>Config WolkList</h4>
+#### // PAGE CONTROLLER
+#### Config WolkList
 
-    <pre>
+```sh
         vm.configWolkList = {
-            search: false, <span style="color: blue">// Search visibility</span>
+            search: false, // Search visibility
             title: {
-                visible: false, <span style="color: blue">// Title visibility, naming</span>
+                visible: false, // Title visibility, naming
                 titleName: "List name"
             },
-            checkbox: true, <span style="color: blue">// Checkbox visibility</span>
+            checkbox: true, // Checkbox visibility
             pagination: {
-                visible: false, <span style="color: blue">// Pagination visibility, dropdown manu values</span>
+                visible: false, // Pagination visibility, dropdown manu values
                 itemsPerPage: [3, 6, 9, 12, 15]
             }
         };
-    </pre>
+```
+#### List data structure
 
-    <h4>List data structure</h4>
-
-    <pre>
+```sh
         vm.listData = [
             {
                 id: 1,
-                name: 'Whatever',
+                name: 'String',
                 checked: true
             },
             {
                 id: 2,
-                name: 'Whatever',
+                name: 'String',
                 checked: true
             }
         // ...
         ];
-    </pre>
+```
+#### // HTML PAGE
 
-    <h3>// HTML PAGE</h3>
-
-    <xmp>
+```sh
         <wolk-list config-list="main.configWolkList" list-items="main.listData"></wolk-list>
-    </xmp>
-    
-</body>
-</html>
+```
