@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('wolkDirective')
+    .module('wolkDirective',[])
     .directive('wolkList', wolkList)
     .filter('startFrom', function() {
         return function(input, start) {
@@ -15,7 +15,7 @@
   function wolkList() {
       var directive = {
         restrict: 'E',
-        templateUrl: 'app/components/wolkList/wolkList.html',
+        templateUrl: 'bower_components/wolkList/wolkList.html',
         scope: {
             configList: '=',
             listItems: '='
