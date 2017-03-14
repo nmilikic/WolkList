@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('wolkDirective',[])
+    .module('wolkList',[])
     .directive('wolkList', wolkList)
     .filter('startFrom', function() {
         return function(input, start) {
@@ -15,7 +15,42 @@
   function wolkList() {
       var directive = {
         restrict: 'E',
-        templateUrl: 'bower_components/wolkList/wolkList.html',
+        template: 
+                      `
+                      <md-list class="wolkListWrapper" ng-cloak>  
+                            <md-input-container md-no-float layout-margin class="md-block" ng-show="vm.configWolkList.search">
+                                <input ng-model="listItem.name" placeholder="Search">
+                            </md-input-container>
+                            <md-subheader class="md-no-sticky wolkListTitle" ng-if="vm.configWolkList.title.visible">{{ vm.configWolkList.title.titleName }} <i class="material-icons sortByItem" ng-show="vm.up" ng-click="vm.descendingOrder()">expand_less</i><i class="material-icons sortByItem" ng-show="vm.down" ng-click="vm.descendingOrder()">expand_more</i></md-subheader>
+                            <md-list-item class="wolkListItem" ng-repeat="listItem in vm.listItems | filter:listItem.name | startFrom:vm.currentPage*vm.pageSize | limitTo:vm.pageSize | orderBy : vm.temp">
+                                <p> {{ listItem.name }} </p>
+                                <md-checkbox class="md-secondary wolkListCheckbox" ng-model="listItem.checked" ng-if="vm.configWolkList.checkbox"></md-checkbox>
+                                <md-divider layout-margin></md-divider>
+                            </md-list-item>
+                            <md-list-item class="wolkListPaginationContainer" ng-if="vm.configWolkList.pagination.visible">
+                                <md-content class="wolkListPaginationItems" flex="15" layout="row" layout-align="center center">
+                                    <p class="wolkListFooterParagraph">Page:<span>{{ vm.currentPage + 1 }}</span></p>
+                                </md-content>
+                                <md-content class="wolkListPaginationItems" flex="15" layout="row" layout-align="center center">
+                                    {{ vm.currentPage + 1 }} of {{ vm.numberOfPages() }}
+                                </md-content>
+                                <md-input-container flex="50" layout="row" layout-align="center center"  style="margin: 0;">
+                                    <p class="wolkListFooterParagraph">Rows per page:</p>
+                                    <md-select name="type" ng-model="vm.pageSize" required>
+                                        <md-option ng-repeat="boxValue in vm.configWolkList.pagination.itemsPerPage" value="{{ boxValue }}">{{ boxValue }}</md-option>
+                                    </md-select>
+                                </md-input-container>
+                                <md-content class="wolkListPaginationItems" flex="20" layout="row" layout-align="end center">
+                                    <md-button class="wolkListFooterButton" ng-disabled="vm.currentPage === 0" ng-click="vm.currentPage=vm.currentPage - 1">
+                                        <md-icon md-font-set="material-icons">chevron_left</md-icon>
+                                    </md-button>
+                                    <md-button class="wolkListFooterButton" ng-disabled="vm.currentPage >= vm.getData().length/vm.pageSize - 1" ng-click="vm.currentPage=vm.currentPage + 1">
+                                        <md-icon md-font-set="material-icons">chevron_right</md-icon>
+                                    </md-button>
+                                </md-content>
+                            </md-list-item>
+                        </md-list>
+                      `,
         scope: {
             configList: '=',
             listItems: '='
