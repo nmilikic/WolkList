@@ -1,6 +1,6 @@
 ## WolkList Angular Component
 
-An AngularJS directive which adds list of items to your page. It includes checkboxes, search filtering and pagination. Every list component can be disabled/enabled.
+An AngularJS directive which adds list of items to your page. It includes checkboxes, search filter and pagination. Every component on the list can be disabled/enabled.
 
 #### // PAGE CONTROLLER
 #### Config WolkList
