@@ -2,6 +2,12 @@
 
 An AngularJS directive which adds list of items to your page. It includes checkboxes, search filter and pagination. Every component on the list can be disabled/enabled.
 
+#### Install as Bower package
+
+```sh
+        bower install wolk-list --save
+```
+
 #### // PAGE CONTROLLER
 #### Config WolkList
 
