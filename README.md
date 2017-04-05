@@ -44,4 +44,4 @@ An AngularJS directive which adds list of items to your page. It includes checkb
 
 #### See WolkList sample
 
-[WolkList Sample](https://jsfiddle.net/nmilikic/wt4zbvfy/10/)
+[WolkList Sample](https://jsfiddle.net/nmilikic/stbtsjvn/)
