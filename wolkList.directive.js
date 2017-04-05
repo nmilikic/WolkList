@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('wolkList',[])
+    .module('wolkList',['ngMaterial'])
     .directive('wolkList', wolkList)
     .filter('startFrom', function() {
         return function(input, start) {
